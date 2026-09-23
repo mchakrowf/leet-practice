@@ -21,3 +21,30 @@ class Solution {
         return ans;
     }
 }
+
+//O(n)
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> setAns = new HashSet<>();
+
+        for (int i : nums1){
+            set1.add(i);
+        }
+
+        for (int j : nums2){
+            if (set1.contains(j)){
+                setAns.add(j);
+            }
+        }
+        
+        int[] ans = new int[setAns.size()];
+        int w = 0;
+        for (int k : setAns){
+            ans[w] = k;
+            w++;
+        }
+        return ans;
+
+    }
+}

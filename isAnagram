@@ -1,21 +1,13 @@
+O(nlogn)
 class Solution {
     public boolean isAnagram(String s, String t) {
+        char[] sArr = s.toCharArray();
+        char[] tArr = t.toCharArray();
 
+        Arrays.sort(sArr);
+        Arrays.sort(tArr);
 
-        int i = s.length();
-        int j = t.length();
+        return Arrays.equals(sArr, tArr);
 
-        if (i != j) {
-            return false;
-        }
-        
-        char[] a = s.toCharArray();
-        char[] b = t.toCharArray();
-
-        Arrays.sort(a);
-        Arrays.sort(b);
-        
-        return Arrays.equals(a, b);
-        
     }
 }

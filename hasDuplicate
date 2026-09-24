@@ -1,0 +1,42 @@
+//O(nlogn)
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        Arrays.sort(nums);
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]){
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+//O(n)
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        HashMap<Integer, Integer> dupe = new HashMap<>();
+
+        for (int i : nums){
+            dupe.putIfAbsent(i, 0);
+        }
+
+        return (nums.length != dupe.size());
+    }
+}
+
+//O(n)
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        Set<Integer> dupe = new HashSet<>();
+
+        for (int i : nums){
+            if(!dupe.add(i)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+}

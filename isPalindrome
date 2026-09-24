@@ -1,0 +1,19 @@
+//O(n)
+class Solution {
+    public boolean isPalindrome(String s) {
+        List<Character> list = new ArrayList<>();
+        char[] arr = s.toCharArray();
+        for (char c : arr){
+            if (Character.isLetterOrDigit(c)) {
+                c =Character.toLowerCase(c);
+                list.add(c);
+            }
+        }
+        List<Character> rev = new ArrayList<>(list);
+        Collections.reverse(rev);
+
+        return rev.equals(list);
+        
+    }
+
+}
